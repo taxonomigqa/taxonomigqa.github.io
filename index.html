@@ -4,37 +4,33 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta name="description" content="Vision-language training improves the deployment of taxonomic knowledge in LMs for text-only tasks, rather than fundamentally altering the knowledge itself. Introducing TaxonomiGQA.">
+  <meta property="og:title" content="Vision-and-Language Training Helps Deploy Taxonomic Knowledge but Does Not Fundamentally Alter It"/>
+  <meta property="og:description" content="VL training enhances LM's ability to deploy taxonomic knowledge in text-only tasks, without fundamentally changing the knowledge itself. See our new TaxonomiGQA dataset."/>
+  <meta property="og:url" content="https://your-github-username.github.io/your-repo-name/"/> <!-- UPDATE THIS URL -->
+  <!-- Path to banner image, should be in the path listed below. Optimal dimensions are 1200X630-->
+  <meta property="og:image" content="static/images/taxonomigqa_banner.png" /> <!-- RECOMMEND CREATING A BANNER IMAGE (e.g., from Figure 1 or key results) -->
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
-
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:title" content="VL Training: Deploying Taxonomic Knowledge, Not Altering It">
+  <meta name="twitter:description" content="Our study shows VL training helps LMs deploy taxonomic knowledge in text-only tasks, linked to visual concept similarity. Introducing TaxonomiGQA.">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimensions are 1200X600-->
+  <meta name="twitter:image" content="static/images/taxonomigqa_twitter_banner.png"> <!-- RECOMMEND CREATING A TWITTER BANNER IMAGE -->
   <meta name="twitter:card" content="summary_large_image">
   <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="keywords" content="Vision-and-Language Models, Language Models, Taxonomic Knowledge, Conceptual Knowledge, Text-only QA, GQA, TaxonomiGQA, VLM, LM, Grounding, Neural Networks, NeurIPS">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-  <title>Academic Project Page</title>
+  <title>Vision-and-Language Training: Taxonomic Knowledge Deployment</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -46,74 +42,76 @@
 </head>
 <body>
 
-
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+             <!-- Title icon and text aligned -->
+             <h1 class="title is-1 publication-title">
+              <div class="is-flex is-align-items-center is-justify-content-center" style="display: flex;">
+                <img src="static/images/taxonomicGQA-title-transparent.png" alt="TaxonomicGQA Icon" style="height: 3em; margin-right: 0.5em;">
+                <span style="line-height: 1;">
+                  Vision-and-Language Training Helps Deploy Taxonomic Knowledge<br>But Does Not Fundamentally Alter It
+                </span>
+              </div>
+            </h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="https://yuluqinn.github.io/" target="_blank">Yulu Qin</a><sup>1*</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="https://dhevarghese.github.io" target="_blank">Dheeraj Varghese</a><sup>2*</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="https://www.umu.se/en/staff/adam-dahlgren-lindstrom/" target="_blank">Adam Dahlgren Lindström</a><sup>3</sup>,
                   </span>
-                  </div>
+                  <span class="author-block">
+                    <a href="https://vu.nl/en/research/scientists/lucia-donatelli" target="_blank">Lucia Donatelli</a><sup>4</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://kanishka.website/" target="_blank">Kanishka Misra</a><sup>5</sup>,
+                  </span>  
+                  <span class="author-block">
+                    <a href="https://najoung.kim/" target="_blank">Najoung Kim</a><sup>1</sup>
+                  </span>  
+                </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
+                    <span class="author-block"><sup>1</sup>Boston University, <sup>2</sup>University of Amsterdam, <sup>3</sup>Umeå universitet, <sup>4</sup>VU Amsterdam, <sup>5</sup>TTIC <br>NeurIPS 2025</span>
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
-                         <!-- Arxiv PDF link -->
+                         <!-- Paper PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
+                        <a class="external-link button is-normal is-rounded is-dark" disabled title="Coming Soon!">
+                          <span class="icon">
+                            <i class="fas fa-file-pdf"></i>
+                          </span>
+                          <span>Paper</span>
+                        </a>
                       </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
+
+                      <!-- Dataset link -->
+                      <span class="link-block">
+                        <a class="external-link button is-normal is-rounded is-dark" disabled title="Coming Soon!">
+                          <span class="icon">
+                            <i class="fas fa-database"></i>
+                          </span>
+                          <span>Dataset</span>
+                        </a>
+                      </span>
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
+                    <a class="external-link button is-normal is-rounded is-dark" disabled title="Coming Soon!">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
                 </span>
-
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
             </div>
           </div>
         </div>
@@ -127,14 +125,13 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
+      <img src="static/images/scene-description.png" alt="Three-step pipeline for TaxonomiGQA" width="100%" height="100%">
+      <!-- <h2 class="subtitle has-text-centered">
+        Our three-step pipeline for generating the TaxonomiGQA dataset. This process involves: (1) converting original GQA scene metadata into rich textual descriptions; (2) substituting target objects in questions with their hypernyms to create a set of positive questions testing taxonomic understanding; and (3) constructing four unique negative samples for each positive question to ensure robust evaluation.
+      </h2> -->
+      <p class="content is-italic has-text-centered mt-2">
+        Our three-step pipeline for generating the TaxonomiGQA dataset. This process involves: (1) converting original GQA scene metadata into rich textual descriptions; (2) substituting target objects in questions with their hypernyms to create a set of positive questions testing taxonomic understanding; and (3) constructing four unique negative samples for each positive question to ensure robust evaluation.
+      </p>
     </div>
   </div>
 </section>
@@ -148,7 +145,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Does vision-and-language (VL) training change the linguistic representations of language models in meaningful ways? Most results in the literature have shown inconsistent or marginal differences, both behaviorally and representationally. In this work, we start from the hypothesis that the domain in which VL training could have a significant effect is lexical-conceptual knowledge, in particular its taxonomic organization. Through comparing minimal pairs of text-only LMs and their VL-trained counterparts, we first show that the VL models often outperform their text-only counterparts on a text-only question-answering task that requires taxonomic understanding of concepts mentioned in the questions. Using an array of targeted behavioral and representational analyses, we show that the LMs and VLMs do not differ significantly in terms of their taxonomic knowledge itself, but they differ in how they represent questions that contain concepts in a taxonomic relation vs. a non-taxonomic relation. This implies that the taxonomic knowledge itself does not change substantially through additional VL training, but VL training does improve the deployment of this knowledge in the context of a specific task, even when the presentation of the task is purely linguistic.
           </p>
         </div>
       </div>
@@ -157,130 +154,175 @@
 </section>
 <!-- End paper abstract -->
 
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+<!-- Our Contributions -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Our Contributions</h2>
+        <div class="content has-text-justified">
+          <p>We delve into how vision-and-language (VL) training affects the linguistic capacities of LMs, focusing on taxonomic knowledge. Our work introduces and leverages:</p>
+          <ul>
+            <li><strong>TaxonomiGQA Dataset:</strong> A novel, synthetically augmented, text-only question-answering dataset derived from GQA, specifically designed to evaluate models' taxonomic understanding.</li>
+            <li><strong>Comparative Analysis of LM-VLM Pairs:</strong> A systematic comparison of 7 minimal pairs of text-only LMs and their VL-trained counterparts on taxonomic reasoning, consistently showing VLMs outperform LMs even on purely linguistic tasks.</li>
+            <li><strong>Insights into Taxonomic Knowledge:</strong> Through detailed behavioral and representational analyses, we distinguish between intrinsic taxonomic knowledge and its deployment. We show VL training primarily enhances the latter, without fundamentally altering the underlying knowledge.</li>
+            <li><strong>Hypothesis on Visual Grounding:</strong> We provide initial evidence that VLMs' improved deployment of taxonomic knowledge is correlated with the visual similarity and cohesion of the concepts involved in taxonomic relations.</li>
+          </ul>
+        </div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
     </div>
   </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
+<!-- End Our Contributions -->
 
+<!-- TaxonomiGQA Dataset Section -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">TaxonomiGQA Dataset</h2>
+        <div class="content has-text-justified">
+          <p>
+            <strong>TaxonomiGQA</strong> is a text-only Question-Answering dataset designed to assess models' taxonomic understanding. It is built upon the popular 
+            <a href="https://cs.stanford.edu/people/dorarad/gqa/download.html" target="_blank">GQA dataset</a>.
+          </p>
+        
+          <h3 class="title is-4">How It's Built</h3>
+          <p>We applied a three-step pipeline to transform GQA metadata into our text-only dataset (illustrated in Figure 1 above):</p>
+          <ol>
+            <li>
+              <strong>Scene Description:</strong> Convert original scene graphs into rich textual descriptions using hand-crafted templates.
+              <br><em>Example:</em> “There are 3 objects in the scene, including a road, a black bear, and a car. The bear is crossing the road.”
+            </li>
+            <li>
+              <strong>Hypernym Substitution:</strong> Replace target objects with hypernyms from a WordNet-derived taxonomy.
+              <br><em>Example:</em> “Are there any <strong>mammals</strong>?” instead of “Are there any <strong>bears</strong>?”
+            </li>
+            <li>
+              <strong>Negative Sampling:</strong> Generate 4 hard negatives per question by substituting the target word with a concept <em>not</em> in its taxonomic chain and absent from the scene.
+            </li>
+          </ol>
+        
+          <h3 class="title is-4">Dataset Statistics</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li><strong>• Total Instances:</strong> 92,060 (positive + negative)</li>
+            <li><strong>• Unique Scenes:</strong> 1,489</li>
+            <li><strong>• Hyponym-Hypernym Pairs:</strong> 423</li>
+            <li><strong>• Unique Hypernym Chains:</strong> 131</li>
+            <li><strong>• Unique Hypernyms:</strong> 91</li>
+            <li><strong>• Top-Level Categories:</strong> 24</li>
+          </ul>
+        
+          <p>For more details on question types and the negative sampling process, please refer to <strong>Appendix C</strong> in our paper.</p>
+        </div>
+        
+    </div>
+  </div>
+</section>
+<!-- End TaxonomiGQA Dataset Section -->
 
+<!-- Experiments & Key Findings -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experiments & Key Findings</h2>
+        <div class="content has-text-justified">
+          <p>We evaluated 7 minimal pairs of text-only LMs and their VL-trained counterparts (VLMs) on TaxonomiGQA and conducted in-depth behavioral and representational analyses:</p>
 
+          <h3 class="title is-4">VLMs Outperform LMs on Text-Only Taxonomic QA</h3>
+          <p>Despite TaxonomiGQA being a purely linguistic task, VLMs consistently showed better performance across all evaluated metrics (Overall, Conditional, and Hierarchical Consistence Accuracy) compared to their LM counterparts. This suggests VL training improves the <em>application</em> of taxonomic knowledge, even without visual input during the task.</p>
+          <div class="content has-text-centered">
+            <img src="static/images/VLM_LM_performance.png" alt="VLM LM Performance on TaxonomiGQA" width="100%" height="auto"> <!-- Path to Figure 2 from paper -->
+            <p class="is-size-7">Performance of VLM-LM model pairs on TaxonomiGQA (Section 3) and TAXOMPS (Section 4.1). Points above the line indicate that VLM outperforms LM.</p>
+          </div>
 
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <h3 class="title is-4">Intrinsic Taxonomic Knowledge Remains Largely Unchanged</h3>
+          <p>When directly querying models about taxonomic relations (e.g., "Is it true that a cat is an animal?") using our TAXOMPS dataset, both VLMs and LMs performed similarly and well. This indicates that the fundamental, task-agnostic taxonomic knowledge itself is largely shared and not significantly altered by VL training.</p>
+          <p>Representational Similarity Analysis (RSA) further corroborated this, showing high similarity in the hierarchical organization of concepts between VLMs, LMs, and WordNet, reinforcing that VL training does not fundamentally restructure this knowledge.</p>
+
+          <h3 class="title is-4">Improved Deployment via Contextual Representations</h3>
+          <p>While the underlying knowledge is stable, VLMs show distinct advantages in how they <em>deploy</em> this knowledge within a task context:</p>
+          <ul>
+            <li><strong>Contextualized Similarity:</strong> In deeper layers, the contextualized similarity between hypernym-hyponym pairs (relative to negative samples) in VLMs was more strongly correlated with correct task performance than in LMs. This suggests VLMs form more effective connections between representations and task-relevant behavior.</li>
+            <li><strong>Question Representation Separation:</strong> PCA analysis revealed that VLM question representations more distinctly separate instances containing taxonomic relations from those with non-taxonomic relations, implying a superior encoding of taxonomic distinctions within the full question context.</li>
+          </ul>
+          <div class="content has-text-centered">
+            <img src="static/images/Contextualized_Representational_analysis.png" alt="Contextualized Representational Analysis" width="100%" height="auto"> <!-- Path to Figure 3 from paper -->
+            <p class="is-size-7">Contextualized Representational analysis on Qwen2.5-I and Qwen2.5-VL-I.</p>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
+<!-- End Experiments & Key Findings -->
 
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
+<!-- Why Vision Might Help -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Why Vision Might Help: The Role of Visual Similarity</h2>
+        <div class="content has-text-justified">
+          <p>We conducted a preliminary investigation into <em>why</em> vision training aids in deploying taxonomic knowledge. Our hypothesis is that visual similarity between members of a hypernym-hyponym relation provides helpful cues that VLMs can leverage.</p>
+          <ul>
+            <li><strong>Visual Similarity Predicts VLM Accuracy:</strong> We found a significant positive correlation: higher visual similarity between concepts in a taxonomic relation (e.g., `dog` and `mammal` due to shared visual features) predicted better VLM accuracy on questions probing that relation. This effect was notably weaker for LMs.</li>
+            <li><strong>Visual Cohesion Modulates Effect:</strong> The impact of visual similarity varied by hypernym. Concepts with high visual cohesion (where hyponyms share many visual features, like `stick`) showed a stronger positive effect on VLM performance compared to concepts with low visual cohesion (where hyponyms are visually diverse, like `animal`).</li>
+          </ul>
+          <div class="content has-text-centered">
+            <img src="static/images/Hypernym_specific_random_effects.png" alt="Hypernym-specific random effects of image-similarity" width="100%" height="auto"> <!-- Path to Figure 4 from paper -->
+            <p class="is-size-7">Hypernym-specific random effects of image-similarity in predicting VLM accuracy on TaxonomiGQA.</p>
+          </div>
+          <p>These findings suggest a promising link between visual properties of concepts and VLMs' improved linguistic reasoning capabilities.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End video carousel -->
+<!-- End Why Vision Might Help -->
 
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
+<!-- Conclusion & Future Work -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Conclusion & Future Work</h2>
+        <div class="content has-text-justified">
+          <p>Our work demonstrates that vision-and-language training does not fundamentally change the intrinsic taxonomic knowledge within language models. Instead, it significantly enhances their ability to <em>deploy this knowledge</em> in text-only taxonomic reasoning tasks. This improvement appears to be partly attributable to the <em>visual similarity and cohesion</em> inherent in the taxonomic relations, suggesting visual modality provides a valuable grounding signal for applying linguistic knowledge.</p>
+          <p><strong>Limitations and Future Work:</strong> While our statistical analyses show strong correlations, they do not provide causal evidence. Future work will aim for deeper causal investigations into the training data and objective, and better characterize the precise role of visual input and cohesion in improving model performance on linguistic tasks.</p>
+        </div>
       </div>
     </div>
-  </section>
-<!--End paper poster -->
+  </div>
+</section>
+<!-- End Conclusion & Future Work -->
+
+<!-- Computational Resources -->
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <br><br>
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Computational Resources</h2>
+      </div>
+      <h2 class="subtitle has-text-centered">
+        Our extensive analyses, including model inference and various behavioral and representational studies, were efficiently performed on NVIDIA A40, L40, and RTX6000 Ada GPUs. Most core evaluations completed within a few hours on single GPUs, ensuring these techniques are broadly accessible for future research.
+      </h2>
+    </div>
+  </div>
+</section> -->
+<!-- End Computational Resources -->
 
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+          <pre><code>TBD.</code></pre>
     </div>
 </section>
+
 <!--End BibTex citation -->
 
 
