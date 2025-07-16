@@ -52,7 +52,7 @@
               <div class="is-flex is-align-items-center is-justify-content-center" style="display: flex;">
                 <img src="static/images/taxonomicGQA-title-transparent.png" alt="TaxonomicGQA Icon" style="height: 3em; margin-right: 0.5em;">
                 <span style="line-height: 1;">
-                  Vision-and-Language Training Helps Deploy Taxonomic Knowledge<br>But Does Not Fundamentally Alter It
+                  Vision and Language Training Helps Deploy Taxonomic Knowledge<br>But Does Not Fundamentally Alter It
                 </span>
               </div>
             </h1>
@@ -69,16 +69,16 @@
                     <a href="https://vu.nl/en/research/scientists/lucia-donatelli" target="_blank">Lucia Donatelli</a><sup>4</sup>,
                   </span>
                   <span class="author-block">
-                    <a href="https://kanishka.website/" target="_blank">Kanishka Misra</a><sup>5</sup>,
+                    <a href="https://kanishka.website/" target="_blank">Kanishka Misra</a><sup>5,†</sup>,
                   </span>  
                   <span class="author-block">
-                    <a href="https://najoung.kim/" target="_blank">Najoung Kim</a><sup>1</sup>
+                    <a href="https://najoung.kim/" target="_blank">Najoung Kim</a><sup>1,†</sup>
                   </span>  
                 </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block"><sup>1</sup>Boston University, <sup>2</sup>University of Amsterdam, <sup>3</sup>Umeå universitet, <sup>4</sup>VU Amsterdam, <sup>5</sup>TTIC</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block"><sup>1</sup>Boston University, <sup>2</sup>University of Amsterdam, <sup>3</sup>Umeå universitet, <sup>4</sup>Vrije Universiteit Amsterdam, <br><sup>5</sup>Toyota Technological Institute at Chicago</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution, <sup>†</sup>Indicates Equal Supervision</small></span>
                   </div>
 
                   <div class="column has-text-centered">
@@ -126,9 +126,6 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <img src="static/images/scene-description.png" alt="Three-step pipeline for TaxonomiGQA" width="100%" height="100%">
-      <!-- <h2 class="subtitle has-text-centered">
-        Our three-step pipeline for generating the TaxonomiGQA dataset. This process involves: (1) converting original GQA scene metadata into rich textual descriptions; (2) substituting target objects in questions with their hypernyms to create a set of positive questions testing taxonomic understanding; and (3) constructing four unique negative samples for each positive question to ensure robust evaluation.
-      </h2> -->
       <p class="content is-italic has-text-centered mt-2">
         Our three-step pipeline for generating the TaxonomiGQA dataset. This process involves: (1) converting original GQA scene metadata into rich textual descriptions; (2) substituting target objects in questions with their hypernyms to create a set of positive questions testing taxonomic understanding; and (3) constructing four unique negative samples for each positive question to ensure robust evaluation.
       </p>
@@ -156,146 +153,179 @@
 
 <!-- Our Contributions -->
 <section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Our Contributions</h2>
-        <div class="content has-text-justified">
-          <p>We delve into how vision-and-language (VL) training affects the linguistic capacities of LMs, focusing on taxonomic knowledge. Our work introduces and leverages:</p>
-          <ul>
-            <li><strong>TaxonomiGQA Dataset:</strong> A novel, synthetically augmented, text-only question-answering dataset derived from GQA, specifically designed to evaluate models' taxonomic understanding.</li>
-            <li><strong>Comparative Analysis of LM-VLM Pairs:</strong> A systematic comparison of 7 minimal pairs of text-only LMs and their VL-trained counterparts on taxonomic reasoning, consistently showing VLMs outperform LMs even on purely linguistic tasks.</li>
-            <li><strong>Insights into Taxonomic Knowledge:</strong> Through detailed behavioral and representational analyses, we distinguish between intrinsic taxonomic knowledge and its deployment. We show VL training primarily enhances the latter, without fundamentally altering the underlying knowledge.</li>
-            <li><strong>Hypothesis on Visual Grounding:</strong> We provide initial evidence that VLMs' improved deployment of taxonomic knowledge is correlated with the visual similarity and cohesion of the concepts involved in taxonomic relations.</li>
-          </ul>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Our Contributions</h2>
+          <div class="content has-text-justified">
+            <p>We investigate how vision-and-language (VL) training impacts the ability of language models (LMs) to reason about taxonomic knowledge. To this end, we make the following contributions:</p>
+            <ul>
+              <li><strong>TaxonomiGQA:</strong> We introduce a new text-only QA benchmark derived from GQA that isolates and tests taxonomic reasoning. The dataset includes <strong>148,020 examples</strong>, covering <strong>126 hypernym chains</strong>, and emphasizes hierarchical reasoning using structured positive and hard negative examples.</li>
+              <li><strong>Systematic Evaluation of Minimal LM–VLM Pairs:</strong> We evaluate 7 minimal LM-VLM pairs, where each VLM is built on top of its LM counterpart. Across all pairs (except one), VLMs consistently outperform LMs on purely linguistic taxonomic tasks.</li>
+              <li><strong>Distinguishing Knowledge from Deployment:</strong> Using direct probing and representational analyses, we find that while LMs and VLMs share similar underlying taxonomic knowledge, VLMs are significantly better at <em>deploying</em> that knowledge during task execution.</li>
+              <li><strong>Visual Similarity as a Facilitator:</strong> We show that the performance gains in VLMs correlate with visual similarity and cohesion between concepts in the taxonomy, suggesting that visual grounding helps models apply taxonomic knowledge more effectively.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 </section>
 <!-- End Our Contributions -->
 
 <!-- TaxonomiGQA Dataset Section -->
 <section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">TaxonomiGQA Dataset</h2>
-        <div class="content has-text-justified">
-          <p>
-            <strong>TaxonomiGQA</strong> is a text-only Question-Answering dataset designed to assess models' taxonomic understanding. It is built upon the popular 
-            <a href="https://cs.stanford.edu/people/dorarad/gqa/download.html" target="_blank">GQA dataset</a>.
-          </p>
-        
-          <h3 class="title is-4">How It's Built</h3>
-          <p>We applied a three-step pipeline to transform GQA metadata into our text-only dataset (illustrated in Figure 1 above):</p>
-          <ol>
-            <li>
-              <strong>Scene Description:</strong> Convert original scene graphs into rich textual descriptions using hand-crafted templates.
-              <br><em>Example:</em> “There are 3 objects in the scene, including a road, a black bear, and a car. The bear is crossing the road.”
-            </li>
-            <li>
-              <strong>Hypernym Substitution:</strong> Replace target objects with hypernyms from a WordNet-derived taxonomy.
-              <br><em>Example:</em> “Are there any <strong>mammals</strong>?” instead of “Are there any <strong>bears</strong>?”
-            </li>
-            <li>
-              <strong>Negative Sampling:</strong> Generate 4 hard negatives per question by substituting the target word with a concept <em>not</em> in its taxonomic chain and absent from the scene.
-            </li>
-          </ol>
-        
-          <h3 class="title is-4">Dataset Statistics</h3>
-          <ul style="list-style: none; padding-left: 0;">
-            <li><strong>• Total Instances:</strong> 92,060 (positive + negative)</li>
-            <li><strong>• Unique Scenes:</strong> 1,489</li>
-            <li><strong>• Hyponym-Hypernym Pairs:</strong> 423</li>
-            <li><strong>• Unique Hypernym Chains:</strong> 131</li>
-            <li><strong>• Unique Hypernyms:</strong> 91</li>
-            <li><strong>• Top-Level Categories:</strong> 24</li>
-          </ul>
-        
-          <p>For more details on question types and the negative sampling process, please refer to <strong>Appendix C</strong> in our paper.</p>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">TaxonomiGQA Dataset</h2>
+          <div class="content has-text-justified">
+            <p>
+              <strong>TaxonomiGQA</strong> is a text-only question-answering dataset designed to assess whether models can reason about taxonomic relationships between concepts. It is derived from the <a href="https://cs.stanford.edu/people/dorarad/gqa/download.html" target="_blank">GQA dataset</a> but modified to test lexical-conceptual knowledge without relying on visual input.
+            </p>
+          
+            <h3 class="title is-4">Construction Pipeline</h3>
+            <p>We apply a three-step transformation to GQA to create TaxonomiGQA:</p>
+            <ol>
+              <li>
+                <strong>Scene Descriptions:</strong> Convert scene graphs into natural-sounding textual descriptions using hand-crafted templates.
+                <br><em>Example:</em> “There are 3 objects in the scene, including a road, a black bear, and a car. The bear is crossing the road.”
+              </li>
+              <li>
+                <strong>Hypernym Substitution:</strong> Replace objects in questions with hypernyms sampled from their WordNet-derived hierarchy.
+                <br><em>Example:</em> “Are there any <strong>mammals</strong>?” instead of “Are there any <strong>bears</strong>?”
+              </li>
+              <li>
+                <strong>Negative Sampling:</strong> Create four hard negative samples per question by replacing the target term with a non-hypernym that is absent from the scene.
+              </li>
+            </ol>
+  
+            <h3 class="title is-4">Dataset Summary</h3>
+            <ul style="list-style: none; padding-left: 0;">
+              <li><strong>• Total Instances:</strong> 148,020</li>
+              <li><strong>• Unique Scenes:</strong> 1,342</li>
+              <li><strong>• Positive Samples:</strong> 29,604</li>
+              <li><strong>   • Leaf-node questions:</strong> 9,334</li>
+              <li><strong>   • Hypernym-substituted:</strong> 20,270</li>
+              <li><strong>• Negative Samples:</strong> 118,416 (4 per positive)</li>
+              <li><strong>• Hyponym-Hypernym Pairs:</strong> 276</li>
+              <li><strong>• Hypernym Chains:</strong> 126</li>
+              <li><strong>• Unique Hypernyms:</strong> 88</li>
+              <li><strong>• Top-Level Categories:</strong> 24</li>
+            </ul>
+          
+            <p>More details on question filtering and negative sampling can be found in <strong>Appendix C</strong> of the paper.</p>
+          </div>
         </div>
-        
+      </div>
     </div>
-  </div>
-</section>
+  </section>  
 <!-- End TaxonomiGQA Dataset Section -->
 
 <!-- Experiments & Key Findings -->
 <section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Experiments & Key Findings</h2>
-        <div class="content has-text-justified">
-          <p>We evaluated 7 minimal pairs of text-only LMs and their VL-trained counterparts (VLMs) on TaxonomiGQA and conducted in-depth behavioral and representational analyses:</p>
-
-          <h3 class="title is-4">VLMs Outperform LMs on Text-Only Taxonomic QA</h3>
-          <p>Despite TaxonomiGQA being a purely linguistic task, VLMs consistently showed better performance across all evaluated metrics (Overall, Conditional, and Hierarchical Consistence Accuracy) compared to their LM counterparts. This suggests VL training improves the <em>application</em> of taxonomic knowledge, even without visual input during the task.</p>
-          <div class="content has-text-centered">
-            <img src="static/images/VLM_LM_performance.png" alt="VLM LM Performance on TaxonomiGQA" width="100%" height="auto"> <!-- Path to Figure 2 from paper -->
-            <p class="is-size-7">Performance of VLM-LM model pairs on TaxonomiGQA (Section 3) and TAXOMPS (Section 4.1). Points above the line indicate that VLM outperforms LM.</p>
-          </div>
-
-          <h3 class="title is-4">Intrinsic Taxonomic Knowledge Remains Largely Unchanged</h3>
-          <p>When directly querying models about taxonomic relations (e.g., "Is it true that a cat is an animal?") using our TAXOMPS dataset, both VLMs and LMs performed similarly and well. This indicates that the fundamental, task-agnostic taxonomic knowledge itself is largely shared and not significantly altered by VL training.</p>
-          <p>Representational Similarity Analysis (RSA) further corroborated this, showing high similarity in the hierarchical organization of concepts between VLMs, LMs, and WordNet, reinforcing that VL training does not fundamentally restructure this knowledge.</p>
-
-          <h3 class="title is-4">Improved Deployment via Contextual Representations</h3>
-          <p>While the underlying knowledge is stable, VLMs show distinct advantages in how they <em>deploy</em> this knowledge within a task context:</p>
-          <ul>
-            <li><strong>Contextualized Similarity:</strong> In deeper layers, the contextualized similarity between hypernym-hyponym pairs (relative to negative samples) in VLMs was more strongly correlated with correct task performance than in LMs. This suggests VLMs form more effective connections between representations and task-relevant behavior.</li>
-            <li><strong>Question Representation Separation:</strong> PCA analysis revealed that VLM question representations more distinctly separate instances containing taxonomic relations from those with non-taxonomic relations, implying a superior encoding of taxonomic distinctions within the full question context.</li>
-          </ul>
-          <div class="content has-text-centered">
-            <img src="static/images/Contextualized_Representational_analysis.png" alt="Contextualized Representational Analysis" width="100%" height="auto"> <!-- Path to Figure 3 from paper -->
-            <p class="is-size-7">Contextualized Representational analysis on Qwen2.5-I and Qwen2.5-VL-I.</p>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Experiments & Key Findings</h2>
+          <div class="content has-text-justified">
+            <p>
+              We evaluated <strong>7 minimal pairs</strong> of language models (LMs) and their vision-and-language (VL) counterparts (VLMs), where each pair shares the same base architecture. Despite TaxonomiGQA being a purely text-based benchmark, VLMs consistently outperformed LMs across multiple accuracy metrics.
+            </p>
+  
+            <h3 class="title is-4">VLMs Consistently Outperform LMs on Text-Only QA</h3>
+            <p>
+              VLMs achieved higher scores than LMs on all three evaluation metrics:
+              <em>Overall Accuracy</em>, <em>Conditional Accuracy</em>, and <em>Hierarchical Consistency</em>. This held across nearly all model pairs (with the exception of Vicuna vs. Llava-1.5), suggesting that VL training improves a model's ability to apply taxonomic knowledge, even in purely linguistic contexts.
+            </p>
+            <div class="content has-text-centered">
+              <img src="static/images/VLM_LM_performance.png" alt="VLM LM Performance on TaxonomiGQA" width="100%" height="auto">
+              <p class="is-size-7">Performance of VLM-LM model pairs on TaxonomiGQA and TAXOMPS. Points above the diagonal indicate VLM outperformance.</p>
+            </div>
+  
+            <h3 class="title is-4">Underlying Taxonomic Knowledge Is Largely Similar</h3>
+            <p>
+              To probe whether VLMs have fundamentally different taxonomic knowledge, we introduced <strong>TAXOMPS</strong>, a separate QA benchmark directly asking whether one concept is a kind of another (e.g., “Is a cat an animal?”). Both LMs and VLMs performed similarly well, indicating that their <em>intrinsic</em> taxonomic knowledge remains largely unchanged by VL training.
+            </p>
+            <p>
+              We further confirmed this through Representational Similarity Analysis (RSA), which showed high structural alignment between LMs, VLMs, and WordNet’s hierarchy across all model pairs. These results suggest that VL training does not substantially reorganize a model’s internal concept taxonomy.
+            </p>
+  
+            <h3 class="title is-4">VL Training Enhances Contextual Deployment</h3>
+            <p>
+              While the underlying knowledge is similar, VLMs show a clear advantage in how they <em>deploy</em> that knowledge in task contexts. Two key analyses support this:
+            </p>
+            <ul>
+              <li>
+                <strong>Contextualized Similarity Predicts Behavior:</strong> In Qwen2.5-VL, contextual embeddings of hyponyms and their hypernyms were significantly more predictive of correct task performance (odds ratio <code>b = 0.52, SE = 0.19, p &lt; .01</code>) than in its LM counterpart Qwen2.5 (odds ratio <code>b = 0.23, SE = 0.17, p = 0.18</code>).
+              </li>
+              <li>
+                <strong>More Distinct Question Representations:</strong> PCA of question embeddings showed that VLMs more clearly separate taxonomic vs. non-taxonomic substitutions. A linear SVM trained on the top 2 PCs had lower error for VLMs (0.36) than for LMs (0.52), indicating clearer task-relevant distinctions.
+              </li>
+            </ul>
+            <div class="content has-text-centered">
+              <img src="static/images/Contextualized_Representational_analysis.png" alt="Contextualized Representational Analysis" width="100%" height="auto">
+              <p class="is-size-7">Contextualized representational analysis on Qwen2.5-I (LM) and Qwen2.5-VL-I (VLM).</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>  
 <!-- End Experiments & Key Findings -->
 
 <!-- Why Vision Might Help -->
 <section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Why Vision Might Help: The Role of Visual Similarity</h2>
-        <div class="content has-text-justified">
-          <p>We conducted a preliminary investigation into <em>why</em> vision training aids in deploying taxonomic knowledge. Our hypothesis is that visual similarity between members of a hypernym-hyponym relation provides helpful cues that VLMs can leverage.</p>
-          <ul>
-            <li><strong>Visual Similarity Predicts VLM Accuracy:</strong> We found a significant positive correlation: higher visual similarity between concepts in a taxonomic relation (e.g., `dog` and `mammal` due to shared visual features) predicted better VLM accuracy on questions probing that relation. This effect was notably weaker for LMs.</li>
-            <li><strong>Visual Cohesion Modulates Effect:</strong> The impact of visual similarity varied by hypernym. Concepts with high visual cohesion (where hyponyms share many visual features, like `stick`) showed a stronger positive effect on VLM performance compared to concepts with low visual cohesion (where hyponyms are visually diverse, like `animal`).</li>
-          </ul>
-          <div class="content has-text-centered">
-            <img src="static/images/Hypernym_specific_random_effects.png" alt="Hypernym-specific random effects of image-similarity" width="100%" height="auto"> <!-- Path to Figure 4 from paper -->
-            <p class="is-size-7">Hypernym-specific random effects of image-similarity in predicting VLM accuracy on TaxonomiGQA.</p>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Why Vision Might Help: The Role of Visual Similarity</h2>
+          <div class="content has-text-justified">
+            <p>
+              Why does VL training improve performance on a text-only task like TaxonomiGQA? We explored the hypothesis that visual similarity between concepts, especially those in a taxonomic relation, helps models learn more deployable representations.
+            </p>
+            <ul>
+              <li>
+                <strong>Visual Similarity Predicts VLM Accuracy:</strong> For each hypernym-hyponym pair, we computed visual similarity using embeddings from the VLM’s vision encoder on independent images from the <a href="https://things-initiative.org" target="_blank">THINGS</a> dataset. Higher similarity was associated with higher VLM conditional accuracy on corresponding taxonomic questions (<code>b = 0.52, SE = 0.19, p &lt; .01</code>). No such effect was found for LMs (<code>b = 0.23, SE = 0.17, p = 0.18</code>).
+              </li>
+              <li>
+                <strong>Impact Varies by Concept:</strong> The strength of this effect varied across hypernyms. Concepts whose members were more visually cohesive (e.g., <em>band</em>, <em>stick</em>) showed stronger visual-similarity benefits, while broad or heterogeneous categories (e.g., <em>animal</em>, <em>structure</em>) showed weaker effects.
+              </li>
+            </ul>
+            <div class="content has-text-centered">
+              <img src="static/images/Hypernym_specific_random_effects.png" alt="Hypernym-specific random effects of image-similarity" width="100%" height="auto">
+              <p class="is-size-7">Effect of visual similarity on VLM performance across hypernym categories. Bar color reflects visual cohesion (darker = higher cohesion).</p>
+            </div>
+            <p>
+              These results suggest that VL training helps models exploit visual regularities in concept hierarchies, especially when categories have consistent visual features. This may help explain why VLMs deploy taxonomic knowledge more effectively.
+            </p>
           </div>
-          <p>These findings suggest a promising link between visual properties of concepts and VLMs' improved linguistic reasoning capabilities.</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>  
 <!-- End Why Vision Might Help -->
 
 <!-- Conclusion & Future Work -->
 <section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Conclusion & Future Work</h2>
-        <div class="content has-text-justified">
-          <p>Our work demonstrates that vision-and-language training does not fundamentally change the intrinsic taxonomic knowledge within language models. Instead, it significantly enhances their ability to <em>deploy this knowledge</em> in text-only taxonomic reasoning tasks. This improvement appears to be partly attributable to the <em>visual similarity and cohesion</em> inherent in the taxonomic relations, suggesting visual modality provides a valuable grounding signal for applying linguistic knowledge.</p>
-          <p><strong>Limitations and Future Work:</strong> While our statistical analyses show strong correlations, they do not provide causal evidence. Future work will aim for deeper causal investigations into the training data and objective, and better characterize the precise role of visual input and cohesion in improving model performance on linguistic tasks.</p>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Conclusion & Future Work</h2>
+          <div class="content has-text-justified">
+            <p>
+              Our findings show that vision-and-language (VL) training doesn’t fundamentally change a model’s taxonomic knowledge. Instead, it improves how models <em>apply</em> that knowledge when solving tasks. Despite being evaluated on a purely text-based dataset, VLMs outperformed their LM counterparts across all metrics.
+            </p>
+            <p>
+              Through a series of behavioral and representational analyses, we find that VLMs form stronger contextual links between related concepts and represent taxonomic distinctions more distinctly in downstream tasks. This advantage appears linked to the visual similarity and cohesion among concepts in the taxonomic hierarchy.
+            </p>
+            <p>
+              <strong>Looking ahead:</strong> our analyses are correlational in nature. A key direction for future work is establishing <em>causal</em> links between VL training and task-specific deployment behavior, potentially by analyzing training data, probing internal objectives, or manipulating visual features during pretraining. There is also room to explore whether VLMs encode non-linear taxonomic distinctions that aren’t captured by the linear separability analyses used here.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>  
 <!-- End Conclusion & Future Work -->
 
 <!-- Computational Resources -->
@@ -316,11 +346,11 @@
 
 
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-          <pre><code>TBD.</code></pre>
-    </div>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+        <pre><code>TBD.</code></pre>
+  </div>
 </section>
 
 <!--End BibTex citation -->
