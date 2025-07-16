@@ -251,12 +251,18 @@
               <li>
                 <strong>Contextualized Similarity Predicts Behavior:</strong> In Qwen2.5-VL, contextual embeddings of hyponyms and their hypernyms were significantly more predictive of correct task performance (odds ratio <code>b = 0.52, SE = 0.19, p &lt; .01</code>) than in its LM counterpart Qwen2.5 (odds ratio <code>b = 0.23, SE = 0.17, p = 0.18</code>).
               </li>
+            </ul>
+            <div class="content has-text-centered mt-3">
+              <img src="static/images/contextualized_analysis_odds_ratio.png" alt="Odds ratios for contextual similarity predicting accuracy" style="max-width: 50%; height: auto;">
+              <p class="is-size-7">Log odds ratios from logistic regression: contextualized similarity predicts accuracy more strongly in Qwen2.5-VL.</p>
+            </div>
+            <ul>
               <li>
                 <strong>More Distinct Question Representations:</strong> PCA of question embeddings showed that VLMs more clearly separate taxonomic vs. non-taxonomic substitutions. A linear SVM trained on the top 2 PCs had lower error for VLMs (0.36) than for LMs (0.52), indicating clearer task-relevant distinctions.
               </li>
             </ul>
             <div class="content has-text-centered">
-              <img src="static/images/Contextualized_Representational_analysis.png" alt="Contextualized Representational Analysis" width="100%" height="auto">
+              <img src="static/images/Contextualized_Representational_analysis.png" alt="Contextualized Representational Analysis" width="75%" height="auto">
               <p class="is-size-7">Contextualized representational analysis on Qwen2.5-I (LM) and Qwen2.5-VL-I (VLM).</p>
             </div>
           </div>
@@ -289,7 +295,7 @@
               <p class="is-size-7">Effect of visual similarity on VLM performance across hypernym categories. Bar color reflects visual cohesion (darker = higher cohesion).</p>
             </div>
             <p>
-              These results suggest that VL training helps models exploit visual regularities in concept hierarchies, especially when categories have consistent visual features. This may help explain why VLMs deploy taxonomic knowledge more effectively.
+              These results suggest that VL training helps models exploit visual regularities in concept hierarchies, especially when categories have consistent visual features.
             </p>
           </div>
         </div>
