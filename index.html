@@ -95,7 +95,7 @@
 
                       <!-- Dataset link -->
                       <span class="link-block">
-                        <a class="external-link button is-normal is-rounded is-dark" disabled title="Coming Soon!">
+                        <a class="external-link button is-normal is-rounded is-dark" href="https://huggingface.co/datasets/tin-lab/TaxonomiGQA" target="_blank" title="View Dataset">
                           <span class="icon">
                             <i class="fas fa-database"></i>
                           </span>
@@ -105,13 +105,13 @@
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a class="external-link button is-normal is-rounded is-dark" disabled title="Coming Soon!">
+                    <a class="external-link button is-normal is-rounded is-dark" href="https://github.com/tinlaboratory/taxonomigqa" target="_blank" title="View Code on GitHub">
                       <span class="icon">
                         <i class="fab fa-github"></i>
                       </span>
                       <span>Code</span>
                     </a>
-                </span>
+                  </span>
             </div>
           </div>
         </div>
@@ -125,9 +125,9 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="static/images/scene-description.png" alt="Three-step pipeline for TaxonomiGQA" width="100%" height="100%">
+      <img src="static/images/approach_overview.png" alt="Overview of our experimental approach comparing VLMs and LMs on a text-only QA task derived from VQA." width="100%" height="100%">
       <p class="content is-italic has-text-centered mt-2">
-        Our three-step pipeline for generating the TaxonomiGQA dataset. This process involves: (1) converting original GQA scene metadata into rich textual descriptions; (2) substituting target objects in questions with their hypernyms to create a set of positive questions testing taxonomic understanding; and (3) constructing four unique negative samples for each positive question to ensure robust evaluation.
+        We convert visual scenes into rich text descriptions to create our <strong>TaxonomiGQA</strong> dataset. Both the Vision-Language Model (VLM) and its base Language Model (LM) are then evaluated on this purely text-based QA task, which includes hypernym substitutions. This allows for a controlled comparison of how vision training affects taxonomic understanding.
       </p>
     </div>
   </div>
@@ -183,16 +183,23 @@
             <ol>
               <li>
                 <strong>Scene Descriptions:</strong> Convert scene graphs into textual descriptions of the scene programmatically using hand-crafted templates.
-                <br><em>Example:</em> “There are 3 objects in the scene, including a road, a black bear, and a car. The bear is crossing the road.”
+                <!-- <br><em>Example:</em> “There are 3 objects in the scene, including a road, a black bear, and a car. The bear is crossing the road.” -->
               </li>
               <li>
                 <strong>Hypernym Substitution:</strong> Replace objects in questions with hypernyms sampled from their WordNet-derived hierarchy.
-                <br><em>Example:</em> “Are there any <strong>mammals</strong>?” instead of “Are there any <strong>bears</strong>?”
+                <!-- <br><em>Example:</em> “Are there any <strong>mammals</strong>?” instead of “Are there any <strong>bears</strong>?” -->
               </li>
               <li>
                 <strong>Negative Sampling:</strong> Create four hard negative samples per question by replacing the target term with a non-hypernym that is absent from the scene.
               </li>
             </ol>
+
+            <div class="content has-text-centered my-5">
+              <img src="static/images/scene-description.png" alt="Illustration of the three-step pipeline for creating the TaxonomiGQA dataset." width="100%" height="100%">
+              <p class="is-size-7 mt-2">
+                Our three-step pipeline for generating the TaxonomiGQA dataset. 
+              </p>
+            </div>
   
             <h3 class="title is-4">Dataset Summary</h3>
             <div class="columns is-multiline is-mobile">
@@ -234,7 +241,7 @@
               <em>Overall Accuracy</em>, <em>Conditional Accuracy</em>, and <em>Hierarchical Consistency</em>. This held across nearly all model pairs (with the exception of Vicuna vs. Llava-1.5), suggesting that VL training improves a model's ability to apply taxonomic knowledge.
             </p>
             <div class="content has-text-centered">
-              <img src="static/images/VLM_LM_performance.png" alt="VLM LM Performance on TaxonomiGQA" width="100%" height="auto">
+              <img src="static/images/detailed-VLM_LM_performance.png" alt="VLM LM Performance on TaxonomiGQA" width="100%" height="auto">
               <p class="is-size-7">Performance of VLM-LM model pairs on TaxonomiGQA and TAXOMPS. Points above the diagonal indicate VLM outperformance.</p>
             </div>
             <p>
