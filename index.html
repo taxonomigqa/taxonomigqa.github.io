@@ -252,6 +252,13 @@
             <p>
               To test whether VL training alters the underlying taxonomic knowledge itself, we introduced <strong>TAXOMPS</strong> (taxonomic minimal pairs), a QA dataset constructed on top of our taxonomy, which directly asks whether one concept is a kind of another (e.g., “Is a cat an animal?”) along with four minimal pair questions (e.g., "Is a cat a vegetable?"). Both LMs and VLMs performed similarly well, indicating that their <em>underlying</em> taxonomic knowledge remains largely unchanged by VL training. We further confirmed this through Representational Similarity Analysis (RSA) on top of hierarchically sensitive representations extracted from the LM and the VLM (using the method developed by <a href="https://arxiv.org/abs/2406.01506">Park et al., 2024</a>). We found no significant difference between these representations in any LM-VLM pair.
             </p>
+
+            <div class="content has-text-centered my-4">
+              <img src="static/images/H1_taxomps.png" alt="Performance of VLM vs LM on the TAXOMPS benchmark" style="max-width: 75%; height: auto;">
+              <p class="is-size-7 mt-2">
+                Performance on TAXOMPS. Most model pairs perform similarly well, with points clustered on the diagonal.
+              </p>
+            </div>
   
             <h3 class="title is-4">H2: VL Training improves the deployment of taxonomic knowledge</h3>
             <p>
