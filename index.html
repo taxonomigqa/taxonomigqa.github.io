@@ -4,25 +4,22 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="Vision-language training improves the deployment of taxonomic knowledge in LMs for text-only tasks, rather than fundamentally altering the knowledge itself. Introducing TaxonomiGQA.">
   <meta property="og:title" content="Vision-and-Language Training Helps Deploy Taxonomic Knowledge but Does Not Fundamentally Alter It"/>
-  <meta property="og:description" content="VL training enhances LM's ability to deploy taxonomic knowledge in text-only tasks, without fundamentally changing the knowledge itself. See our new TaxonomiGQA dataset."/>
   <meta property="og:url" content="https://your-github-username.github.io/your-repo-name/"/> <!-- UPDATE THIS URL -->
   <!-- Path to banner image, should be in the path listed below. Optimal dimensions are 1200X630-->
   <meta property="og:image" content="static/images/taxonomigqa_banner.png" /> <!-- RECOMMEND CREATING A BANNER IMAGE (e.g., from Figure 1 or key results) -->
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
-  <meta name="twitter:title" content="VL Training: Deploying Taxonomic Knowledge, Not Altering It">
-  <meta name="twitter:description" content="Our study shows VL training helps LMs deploy taxonomic knowledge in text-only tasks, linked to visual concept similarity. Introducing TaxonomiGQA.">
+  <meta name="twitter:title" content="Vision and Language Training Helps Deploy Taxonomic Knowledge But Does Not Fundamentally Alter It">
   <!-- Path to banner image, should be in the path listed below. Optimal dimensions are 1200X600-->
   <meta name="twitter:image" content="static/images/taxonomigqa_twitter_banner.png"> <!-- RECOMMEND CREATING A TWITTER BANNER IMAGE -->
   <meta name="twitter:card" content="summary_large_image">
   <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="Vision-and-Language Models, Language Models, Taxonomic Knowledge, Conceptual Knowledge, Text-only QA, GQA, TaxonomiGQA, VLM, LM, Grounding, Neural Networks, NeurIPS">
+  <meta name="keywords" content="Vision-and-Language Models, Language Models, Taxonomic Knowledge, Conceptual Knowledge, Text-only QA, GQA, TaxonomiGQA, VLM, LM, Grounding, Neural Networks">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Vision-and-Language Training: Taxonomic Knowledge Deployment</title>
+  <title>Vision and Language Training Helps Deploy Taxonomic Knowledge But Does Not Fundamentally Alter It</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -85,7 +82,7 @@
                     <div class="publication-links">
                          <!-- Paper PDF link -->
                       <span class="link-block">
-                        <a class="external-link button is-normal is-rounded is-dark" disabled title="Coming Soon!">
+                        <a class="external-link button is-normal is-rounded is-dark" href="http://arxiv.org/abs/2507.13328" target="_blank" title="Read paper">
                           <span class="icon">
                             <i class="fas fa-file-pdf"></i>
                           </span>
@@ -127,7 +124,7 @@
     <div class="hero-body">
       <img src="static/images/approach_overview.png" alt="Overview of our experimental approach comparing VLMs and LMs on a text-only QA task derived from VQA." width="100%" height="100%">
       <p class="content is-italic has-text-centered mt-2">
-        We convert visual scenes into rich text descriptions to create our <strong>TaxonomiGQA</strong> dataset. Both the Vision-Language Model (VLM) and its base Language Model (LM) are then evaluated on this purely text-based QA task, which includes hypernym substitutions. This allows for a controlled comparison of how vision training affects taxonomic understanding.
+        We convert visual scenes into rich text descriptions to create our <strong>TaxonomiGQA</strong> dataset. Both the Vision-Language Model (VLM) and its base Language Model (LM) are then evaluated on this purely text-based QA task, which requires understanding of taxonomic relations. This allows for a controlled comparison of how vision training affects taxonomic understanding.
       </p>
     </div>
   </div>
@@ -161,9 +158,9 @@
             <p>We investigate how vision-and-language training impacts the taxonomic knowledge of language models. To this end, we make the following contributions:</p>
             <ul>
               <li><strong>TaxonomiGQA:</strong> We introduce a new text-only question-answering dataset derived from GQA that isolates and tests taxonomic understanding. The dataset includes <strong>148,020 examples</strong>, covering <strong>126 hypernym chains</strong>, and emphasizes robust hierarchical knowledge using positive and multiple hard negative examples.</li>
-              <li><strong>Systematic Evaluation of Minimal LM–VLM Pairs:</strong> We evaluate seven minimal LM-VLM pairs, where each VLM is built on top of its LM counterpart. In six out of seven pairs, VLMs consistently outperform LMs on this task.</li>
-              <li><strong>Distinguishing Knowledge from Deployment:</strong> Using behavioral and representational analyses, we find that while the underlying taxonomic knowledge between VLMs and LMs are not significantly different, VLMs are substantially better at <em>deploying</em> that knowledge in task contexts.</li>
-              <li><strong>Visual Similarity as a facilitator:</strong> We show preliminary evidence that the performance gains in VLMs can be explained by visual similarity and cohesion between concepts in the taxonomy, suggesting that visual grounding may particularly boost the deployment of taxonomic knowledge in cases where category members are largely similar to the larger category.</li>
+              <li><strong>Systematic comparison of minimal LM–VLM pairs:</strong> We evaluate seven minimal LM-VLM pairs, where each VLM is built on top of its LM counterpart. In six out of seven pairs, VLMs consistently outperform LMs on this task.</li>
+              <li><strong>Distinguishing knowledge from deployment:</strong> Using behavioral and representational analyses, we find that while the underlying taxonomic knowledge between VLMs and LMs is not significantly different, VLMs are substantially better at <em>deploying</em> that knowledge in task contexts.</li>
+              <li><strong>Effect of visual similarity and cohesion:</strong> We show preliminary evidence that the performance gains in VLMs can be explained by visual similarity and cohesion between concepts in the taxonomy, suggesting that visual grounding may be a factor underlying the improvement in VLMs. We furthermore find that visual similarity helps more in cases where category members are more similar to the superordinate category.</li>
             </ul>
           </div>
         </div>
@@ -238,11 +235,11 @@
             <h3 class="title is-4">VLMs Consistently Outperform LMs on Text-Only QA</h3>
             <p>
               VLMs achieved higher scores than LMs on all three evaluation metrics:
-              <em>Overall Accuracy</em>, <em>Conditional Accuracy</em>, and <em>Hierarchical Consistency</em>. This held across nearly all model pairs (with the exception of Vicuna vs. Llava-1.5), suggesting that VL training improves a model's ability to apply taxonomic knowledge.
+              <em>Overall Accuracy</em>, <em>Conditional Accuracy</em>, and <em>Hierarchical Consistency</em>. This held across nearly all model pairs (with the exception of Vicuna vs. Llava-1.5), showing that VL training yield improvements in _text-only_ QA that requires sensitivity to taxonomic knowledge.
             </p>
             <div class="content has-text-centered">
               <img src="static/images/detailed-VLM_LM_performance.png" alt="VLM LM Performance on TaxonomiGQA" width="100%" height="auto">
-              <p class="is-size-7">Performance of VLM-LM model pairs on TaxonomiGQA and TAXOMPS. Points above the diagonal indicate VLM outperformance.</p>
+              <p class="is-size-7">Performance of VLM-LM model pairs on TaxonomiGQA and TAXOMPS. Points above the diagonal indicate cases where the VLM outperforms the LM.</p>
             </div>
             <p>
               To explain these observations, we put forth two hypotheses:
@@ -250,7 +247,7 @@
   
             <h3 class="title is-4">H1: VLMs' taxonomic knowledge aligns better with the reference taxonomy</h3>
             <p>
-              To test whether VL training alters the underlying taxonomic knowledge itself, we introduced <strong>TAXOMPS</strong> (taxonomic minimal pairs), a QA dataset constructed on top of our taxonomy, which directly asks whether one concept is a kind of another (e.g., “Is a cat an animal?”) along with four minimal pair questions (e.g., "Is a cat a vegetable?"). Both LMs and VLMs performed similarly well, indicating that their <em>underlying</em> taxonomic knowledge remains largely unchanged by VL training. We further confirmed this through Representational Similarity Analysis (RSA) on top of hierarchically sensitive representations extracted from the LM and the VLM (using the method developed by <a href="https://arxiv.org/abs/2406.01506">Park et al., 2024</a>). We found no significant difference between these representations in any LM-VLM pair.
+              To test whether VL training alters the underlying taxonomic knowledge itself, we introduced <strong>TAXOMPS</strong> (taxonomic minimal pairs), a QA dataset constructed on top of our taxonomy, which directly asks whether one concept is a kind of another (e.g., “Is a cat an animal?”) along with four minimal pair questions (e.g., "Is a cat a vegetable?"). Both LMs and VLMs performed similarly well, indicating that their <em>underlying</em> taxonomic knowledge remains largely unchanged by VL training. 
             </p>
 
             <div class="content has-text-centered my-4">
@@ -259,10 +256,14 @@
                 Performance on TAXOMPS. Most model pairs perform similarly well, with points clustered on the diagonal.
               </p>
             </div>
-  
-            <h3 class="title is-4">H2: VL Training improves the deployment of taxonomic knowledge</h3>
+
             <p>
-              While their underlying knowledge was found to be similar to that of LMs, VLMs show a clear advantage in how they <em>deploy</em> that knowledge in task contexts. Two key analyses performed on the Qwen 2.5 pair (most salient differences in main results) support this:
+              We further confirmed this through Representational Similarity Analysis (RSA) on top of hierarchically sensitive representations extracted from the LM and the VLM (using the method developed by <a href="https://arxiv.org/abs/2406.01506">Park et al., 2024</a>). We found no significant difference between these representations in any LM-VLM pair.
+            </p>
+  
+            <h3 class="title is-4">H2: VL Training improves the deployment of taxonomic knowledge in a specific task context</h3>
+            <p>
+              While their underlying knowledge was found to be similar to that of LMs, VLMs show a clear advantage in how they <em>deploy</em> that knowledge in task contexts. Two key analyses performed on the Qwen 2.5 pair (most salient differences in TaxonomiGQA performance) support this:
             </p>
             <ul>
               <li>
@@ -271,7 +272,7 @@
             </ul>
             <div class="content has-text-centered mt-3">
               <img src="static/images/contextualized_analysis_odds_ratio.png" alt="Odds ratios for contextual similarity predicting accuracy" style="max-width: 50%; height: auto;">
-              <p class="is-size-7">Log odds ratios from logistic regression: contextualized similarity predicts accuracy more strongly in Qwen2.5-VL.</p>
+              <p class="is-size-7">Odds ratios from logistic regression: contextualized similarity is associated with accuracy more strongly in Qwen2.5-VL than its base LM.</p>
             </div>
             <ul>
               <li>
@@ -301,15 +302,15 @@
             </p>
             <ul>
               <li>
-                <strong>Visual Similarity predicts VLM Accuracy much better than it does LM accuracy:</strong> For each hypernym-hyponym pair, we computed visual similarity using embeddings from the VLM’s vision encoder on independent images from the <a href="https://things-initiative.org" target="_blank">THINGS</a> dataset. Higher similarity was associated with higher VLM conditional accuracy on corresponding taxonomic questions (<code>b = 0.52, SE = 0.19, p &lt; .01</code>). No such effect was found for LMs (<code>b = 0.23, SE = 0.17, p = 0.18</code>).
+                <strong>Visual similarity predicts VLM accuracy much better than it does LM accuracy:</strong> For each hypernym-hyponym pair, we computed visual similarity using embeddings from the VLM’s vision encoder on independent images from the <a href="https://things-initiative.org" target="_blank">THINGS</a> dataset. Higher similarity was associated with higher VLM conditional accuracy on corresponding taxonomic questions (<code>b = 0.52, SE = 0.19, p &lt; .01</code>). No such effect was found for LMs (<code>b = 0.23, SE = 0.17, p = 0.18</code>).
               </li>
               <li>
-                <strong>Impact Varies by Concept:</strong> The strength of this effect varied across hypernyms. Concepts whose members were more visually cohesive (e.g., <em>band</em>, <em>stick</em>) showed stronger visual-similarity benefits, while broad or heterogeneous categories (e.g., <em>animal</em>, <em>structure</em>) showed weaker effects.
+                <strong>The effect shows substantial variation by individual concept's visual cohesion:</strong> The strength of this effect varied across different concepts significantly. Concepts whose members were more visually cohesive (e.g., <em>band</em>, <em>stick</em>) seem to show stronger visual-similarity benefits, while broad or heterogeneous categories (e.g., <em>animal</em>, <em>vertebrate</em>) showed weaker effects.
               </li>
             </ul>
             <div class="content has-text-centered">
               <img src="static/images/Hypernym_specific_random_effects.png" alt="Hypernym-specific random effects of image-similarity" width="100%" height="auto">
-              <p class="is-size-7">Effect of visual similarity on VLM performance across hypernym categories. Bar color reflects visual cohesion (darker = higher cohesion).</p>
+              <p class="is-size-7">Effect of visual similarity on VLM performance across concepts. Bar color reflects visual cohesion (darker = higher cohesion).</p>
             </div>
             <p>
               These results suggest that VL training may help models exploit visual regularities in concept hierarchies, especially when categories have largely similar visual features.
@@ -329,7 +330,7 @@
           <h2 class="title is-3">Conclusion & Future Work</h2>
           <div class="content has-text-justified">
             <p>
-              Our findings show that vision-and-language training doesn’t fundamentally change a model’s taxonomic knowledge. Instead, it improves how models <em>apply</em> that knowledge when solving tasks. Despite being evaluated on a purely text-based dataset, VLMs outperformed their LM counterparts across all metrics.
+              By developing TaxonomiGQA, a QA dataset that requires sensitivity to taxonomic knowledge, we showed that VLMs outperformed their LM counterparts across all metrics despite TaxonomiGQA being a purely text-based dataset. We furthermore show that vision-and-language training doesn’t fundamentally change a model’s taxonomic knowledge. Instead, it improves how models <em>apply</em> that knowledge when solving tasks. 
             </p>
             <p>
               Through a series of behavioral and representational analyses, we find that VLMs form stronger contextual links between related concepts and represent taxonomic distinctions more distinctly in downstream tasks. This advantage appears linked to the visual similarity and cohesion among concepts in the taxonomic hierarchy.
@@ -343,22 +344,6 @@
     </div>
   </section>  
 <!-- End Conclusion & Future Work -->
-
-<!-- Computational Resources -->
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <br><br>
-      <div class="columns is-centered has-text-centered">
-        <h2 class="title is-3">Computational Resources</h2>
-      </div>
-      <h2 class="subtitle has-text-centered">
-        Our extensive analyses, including model inference and various behavioral and representational studies, were efficiently performed on NVIDIA A40, L40, and RTX6000 Ada GPUs. Most core evaluations completed within a few hours on single GPUs, ensuring these techniques are broadly accessible for future research.
-      </h2>
-    </div>
-  </div>
-</section> -->
-<!-- End Computational Resources -->
 
 
 <!--BibTex citation -->
